@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "target": "ES6",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.jsx", "app/layout.jsx", "app/contact/page.jsx", "app/category/[slug]/page.jsx", "app/article/[id]/page.jsx", "components/ArticleContent.jsx", "components/CustomCursor.jsx", "components/ErrorMessage.jsx", "components/Footer.jsx", "components/HeroSection.jsx", "components/LiveTicker.jsx", "components/Navbar.jsx", "components/NewsCard.jsx", "components/NewsFeed.jsx", "components/RollbackButton.jsx", "components/TechFilter.jsx", "components/theme-provider.jsx", "hooks/use-mobile.jsx", "hooks/use-toast.js", "types/news.js", "utils/api.js"],
+  "exclude": ["node_modules"]
+}
