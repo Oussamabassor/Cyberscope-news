@@ -2,14 +2,8 @@
 
 import { motion } from "framer-motion"
 import NewsCard from "./NewsCard"
-import type { NewsArticle } from "@/types/news"
 
-interface RelatedNewsProps {
-  currentArticleId: string
-  articles: NewsArticle[]
-}
-
-export default function RelatedNews({ currentArticleId, articles }: RelatedNewsProps) {
+export default function RelatedNews({ currentArticleId, articles }) {
   const relatedArticles = articles.filter((article) => article.id !== currentArticleId).slice(0, 3)
 
   return (

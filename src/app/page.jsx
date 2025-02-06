@@ -1,7 +1,7 @@
-import HeroSection from "@/components/HeroSection"
-import NewsFeed from "@/components/NewsFeed"
-import LiveTicker from "@/components/LiveTicker"
-import { fetchTopNews } from "@/utils/api"
+import HeroSection from "../components/HeroSection"
+import NewsFeed from "../components/NewsFeed"
+import LiveTicker from "../components/LiveTicker"
+import { fetchTopNews } from "../utils/api"
 
 export default async function Home() {
   const newsArticles = await fetchTopNews()

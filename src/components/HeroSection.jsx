@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 
 export default function HeroSection() {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef(null)
 
   useEffect(() => {
     if (videoRef.current) {
@@ -24,7 +24,10 @@ export default function HeroSection() {
           className="object-cover w-full h-full"
           poster="/hero-background.jpg"
         >
-          <source src="https://www.shutterstock.com/shutterstock/videos/1032811178/preview/stock-footage-circle-hud-head-up-display-interface-target-pointer-element-for-futuristic-cyber-technology-concept.webm" type="video/mp4" />
+          <source
+            src="https://www.shutterstock.com/shutterstock/videos/1032811178/preview/stock-footage-circle-hud-head-up-display-interface-target-pointer-element-for-futuristic-cyber-technology-concept.webm"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-background/40" />

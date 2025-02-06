@@ -1,9 +1,9 @@
 import "./globals.css";
-import { Orbitron } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
+import { Orbitron } from "next/font/google/index";
+import { ThemeProvider } from "../components/theme-provider";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import CustomCursor from "../components/CustomCursor";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 

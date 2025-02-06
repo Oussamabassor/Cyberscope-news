@@ -1,10 +1,9 @@
-import type { NewsArticle } from "@/types/news"
-import { categories } from "@/components/Navbar"
+import { categories } from "../components/Navbar"
 
 const API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY
 const API_URL = "https://newsapi.org/v2"
 
-export async function fetchTopNews(): Promise<NewsArticle[]> {
+export async function fetchTopNews() {
   const response = await fetch(`${API_URL}/top-headlines?country=us&category=technology&apiKey=${API_KEY}`)
 
   if (!response.ok) {
@@ -12,7 +11,7 @@ export async function fetchTopNews(): Promise<NewsArticle[]> {
   }
 
   const data = await response.json()
-  return data.articles.map((article: any) => ({
+  return data.articles.map((article) => ({
     id: article.url,
     title: article.title,
     description: article.description,
@@ -24,7 +23,7 @@ export async function fetchTopNews(): Promise<NewsArticle[]> {
   }))
 }
 
-function assignCategory(title: string): string {
+function assignCategory(title) {
   const lowercaseTitle = title.toLowerCase()
   for (const category of categories) {
     if (lowercaseTitle.includes(category.name.toLowerCase())) {

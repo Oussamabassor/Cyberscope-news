@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function NewsCard({ news }) {
   return (
     <motion.div
-      className="overflow-hidden transition-shadow duration-300 rounded-lg shadow-lg bg-card hover:shadow-2xl"
+      className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
     >
@@ -20,17 +20,18 @@ export default function NewsCard({ news }) {
             objectFit="cover"
             className="neon-border"
           />
-          <div className="absolute px-2 py-1 text-xs font-semibold rounded-full top-2 right-2 bg-primary text-primary-foreground">
+          <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-2 py-1 rounded-full text-xs font-semibold">
             {news.category}
           </div>
         </div>
         <div className="p-4">
-          <h3 className="mb-2 text-xl font-semibold transition-colors duration-200 text-foreground hover:text-primary">
+          <h3 className="text-xl font-semibold mb-2 text-foreground hover:text-primary transition-colors duration-200">
             {news.title}
           </h3>
-          <p className="text-sm text-muted-foreground">{news.description}</p>
+          <p className="text-muted-foreground text-sm">{news.description}</p>
         </div>
       </Link>
     </motion.div>
   )
 }
+

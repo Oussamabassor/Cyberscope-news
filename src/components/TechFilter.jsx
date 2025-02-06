@@ -1,15 +1,13 @@
+"use client"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { categories } from "./Navbar"
 
-interface TechFilterProps {
-  onFilterChange: (category: string) => void
-}
-
-export default function TechFilter({ onFilterChange }: TechFilterProps) {
+export default function TechFilter({ onFilterChange }) {
   const [activeFilter, setActiveFilter] = useState("All")
 
-  const handleFilterClick = (category: string) => {
+  const handleFilterClick = (category) => {
     setActiveFilter(category)
     onFilterChange(category)
   }

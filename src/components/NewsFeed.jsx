@@ -2,13 +2,8 @@
 
 import { motion } from "framer-motion"
 import NewsCard from "./NewsCard"
-import type { NewsArticle } from "@/types/news"
 
-interface NewsFeedProps {
-  articles: NewsArticle[]
-}
-
-export default function NewsFeed({ articles }: NewsFeedProps) {
+export default function NewsFeed({ articles }) {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-primary mb-8 neon-glow">Latest Tech News</h2>

@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: 226 58% 9%;
@@ -27,27 +25,39 @@
   --radius: 0.5rem;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    cursor: none;
-  }
+* {
+  border-color: rgb(229, 231, 235);
 }
 
-@layer components {
-  .neon-glow {
-    @apply text-primary;
-    text-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary)), 0 0 15px hsl(var(--primary)), 0 0 20px
-      hsl(var(--primary));
-  }
-  .neon-border {
-    box-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary));
-  }
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  cursor: none;
 }
+
+/* Dark mode */
+:root[data-theme='dark'] * {
+  border-color: rgb(38, 38, 38);
+}
+
+/* Neon effects */
+.neon-glow {
+  color: hsl(var(--primary));
+  text-shadow: 
+    0 0 5px hsl(var(--primary)),
+    0 0 10px hsl(var(--primary)),
+    0 0 15px hsl(var(--primary)),
+    0 0 20px hsl(var(--primary));
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 5px hsl(var(--primary)),
+    0 0 10px hsl(var(--primary));
+}
+
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -154,19 +164,3 @@ select:hover ~ .cursor-dot-outline,
 [tabindex]:not([tabindex="-1"]):hover ~ .cursor-dot-outline {
   transform: translate(-50%, -50%) scale(0.75);
 }
-
-const styles = `
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-.animate-scan {
-  animation: scan 2s linear infinite;
-}
-`;
-
